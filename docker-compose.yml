@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: mysqlDockerfile
+    volumes:
+      - mysql-data:/var/lib/mysql  # Optional volume for persistence (adjust paths if needed)
+
+  api:
+    build:
+      context: .
+      dockerfile: apiDockerfile
+    depends_on:
+      - mysql  # Ensure MySQL service starts before the API container
+
+volumes:
+  mysql-data:  # Optional volume for persistence (adjust volume name if needed)

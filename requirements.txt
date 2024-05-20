@@ -1,0 +1,11 @@
+flask
+flask-sqlalchemy
+flask-jwt-extended
+flask-cors
+sqlalchemy
+pymysql
+Flask-Mail
+flask-restful
+flask-bcrypt
+Flask-Admin
+Flask-Redoc

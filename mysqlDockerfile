@@ -1,0 +1,17 @@
+# Use the official MySQL image from the Docker Hub
+FROM mysql:8.0
+
+# Set environment variables for MySQL configuration
+ENV MYSQL_ROOT_PASSWORD=my-secret-pw
+ENV MYSQL_DATABASE=task-manager-db
+ENV MYSQL_USER=task
+ENV MYSQL_PASSWORD=mypassword
+
+# Copy the SQL script to the container
+COPY ./init.sql /docker-entrypoint-initdb.d/
+
+# Expose the default MySQL port
+EXPOSE 3306
+
+# The default command starts the MySQL server
+CMD ["mysqld"]
