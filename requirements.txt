@@ -9,3 +9,4 @@ flask-restful
 flask-bcrypt
 Flask-Admin
 Flask-Redoc
+cryptography

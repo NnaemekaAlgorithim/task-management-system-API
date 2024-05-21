@@ -24,7 +24,7 @@ jwt = JWTManager(app)
 
 @app.route('/')
 def redirect_to_docs():
-    return redirect(url_for('web_flask/static', filename='redoc-static.html'))  # Assuming your HTML file is named redoc.html
+    return redirect(url_for('static', filename='redoc-static.html'))  # Assuming your HTML file is named redoc.html
 
 # Create an API instance
 api = Api(app)

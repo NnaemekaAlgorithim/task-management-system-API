@@ -12,13 +12,14 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Set environment variables for MySQL connection (use environment linking)
-ENV MYSQL_USER_API=root
-ENV MYSQL_PASSWORD=my-secret-pw
-ENV MYSQL_HOST=mysql
-ENV MYSQL_PORT=3306
+ENV MYSQL_USER_API="root"
+ENV MYSQL_PWD="my-secret-pw"
+ENV MYSQL_HOST="mysql"
+ENV MYSQL_PORT="3306"
+ENV MYSQL_DB="task-manager-db"
 
 # Expose the port your Flask app runs on (e.g., 5000 for development)
 EXPOSE 5000
 
 # Run your Flask application using command or entrypoint
-CMD ["flask", "run"]  # Or use your custom entrypoint script
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]  # Or use your custom entrypoint script
