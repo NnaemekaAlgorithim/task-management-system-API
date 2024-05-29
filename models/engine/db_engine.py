@@ -128,4 +128,5 @@ class DBStorage:
         self.__session.add(obj)
     
     def commit(self):
+        """commit changes to database."""
         self.__session.commit()
